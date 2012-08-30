@@ -18,15 +18,15 @@
                 // Restore application state here.
             }
             args.setPromise(WinJS.UI.processAll().then(function completed(){
-                // Retrieve the div that hosts the rating control
+                // Retrieve the div that hosts the rating control and register event handler
                 var ratingControlDiv = document.getElementById("ratingControlDiv");
                 var ratingControl = ratingControlDiv.winControl;
                 ratingControl.addEventListener("change", ratingChanged, false);
-            }));
 
-            // Retrieve the button and register our event handler
-            var helloButton = document.getElementById("helloButton");
-            helloButton.addEventListener("click", buttonClickHandler, false);
+                // Retrieve the button and register our event handler
+                var helloButton = document.getElementById("helloButton");
+                helloButton.addEventListener("click", buttonClickHandler, false);
+            }));
         }
     };
 
